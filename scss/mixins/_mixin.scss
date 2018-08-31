@@ -125,14 +125,18 @@
 // 
 @mixin flex() {
 	@include browser("flexible") {	
-		display: -webkit-box;
-		display: -moz-box;
-		display: -webkit-flex;
-		display: -ms-flexbox;
-		display: -ms-flex;
+		// display: -webkit-box;
+		// display: -moz-box;
+		// display: -webkit-flex;
+		// display: -ms-flexbox;
+		// display: -ms-flex;
+		// display: flex;
 		display: flex;
+		flex-wrap: wrap;
 		&>div {
 			display: block;
+			min-height: 1px;
+			flex: none;
 		}
 	}
 	@include browser("not-flex") {	
@@ -142,6 +146,7 @@
 		letter-spacing: -1px;
 		&>div {
 			// display: -moz-inline-stack!important;
+			min-height: 1px;
 			display: inline-block;
 			vertical-align: top;
 			letter-spacing: normal;
