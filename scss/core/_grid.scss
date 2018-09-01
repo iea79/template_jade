@@ -17,7 +17,7 @@
 	margin-left: -$grid_padding;
 	box-sizing: content-box;
 	@include flex();
-	// @include flex-flow(row wrap);
+	@include flex-flow(row wrap);
 	// @extend %clear_all;
 	&-nowrap {
 		@include flex-flow(row nowrap);
@@ -25,7 +25,6 @@
 	>div {
 		padding-left: $grid_padding;
 		margin-bottom: $grid_padding;
-		-webkit-box-flex: 0;
 		&.width {
 			&_1 {
 				width: 50%;

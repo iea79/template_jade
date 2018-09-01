@@ -112,6 +112,8 @@
 
 
 // Определяем поддержку flexbox (задается скриптом атрибут data-browser)
+// Так же определяем название браузера
+// Варианты с браузерами chrome, firefox, safari, ios
 @mixin browser($browsers: flexible) {
   @each $browser in $browsers {
     html[data-browser*="#{$browser}"] & {
@@ -120,17 +122,24 @@
   }
 }
 
+// Example
+// .wrapper {
+// 	Стиль только для браузера Chrome
+// 	@include browserName("chrome") {
+// 		&:before {
+// 			content: '';
+// 			display: block;
+// 			height: 20px;
+// 		}
+// 	}
+// }
+
+
 // 
 // @TODO: Add docs to flexbox!
 // 
 @mixin flex() {
 	@include browser("flexible") {	
-		// display: -webkit-box;
-		// display: -moz-box;
-		// display: -webkit-flex;
-		// display: -ms-flexbox;
-		// display: -ms-flex;
-		// display: flex;
 		display: flex;
 		flex-wrap: wrap;
 		&>div {
